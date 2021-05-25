@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calculator index{% endblock %}
+
+{% block body %}
+    <h1>Calculator index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstNumber</th>
+                <th>SecondNumber</th>
+                <th>Operator</th>
+                <th>Result</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for calculator in calculators %}
+            <tr>
+                <td>{{ calculator.id }}</td>
+                <td>{{ calculator.firstNumber }}</td>
+                <td>{{ calculator.secondNumber }}</td>
+                <td>{{ calculator.operator }}</td>
+                <td>{{ calculator.result }}</td>
+                <td>
+                    <a href="{{ path('calculator_show', {'id': calculator.id}) }}">show</a>
+                    <a href="{{ path('calculator_edit', {'id': calculator.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('calculator_new') }}">Create new</a>
+{% endblock %}

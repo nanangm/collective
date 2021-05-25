@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Calculator{% endblock %}
+
+{% block body %}
+    <h1>Edit Calculator</h1>
+
+    {{ include('calculator/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('calculator_index') }}">back to list</a>
+
+    {{ include('calculator/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calculator{% endblock %}
+
+{% block body %}
+    <h1>Calculator</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calculator.id }}</td>
+            </tr>
+            <tr>
+                <th>FirstNumber</th>
+                <td>{{ calculator.firstNumber }}</td>
+            </tr>
+            <tr>
+                <th>SecondNumber</th>
+                <td>{{ calculator.secondNumber }}</td>
+            </tr>
+            <tr>
+                <th>Operator</th>
+                <td>{{ calculator.operator }}</td>
+            </tr>
+            <tr>
+                <th>Result</th>
+                <td>{{ calculator.result }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('calculator_index') }}">back to list</a>
+
+    <a href="{{ path('calculator_edit', {'id': calculator.id}) }}">edit</a>
+
+    {{ include('calculator/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Calculator{% endblock %}
+
+{% block body %}
+    <h1>Create new Calculator</h1>
+
+    {{ include('calculator/_form.html.twig') }}
+
+    <a href="{{ path('calculator_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="calculator">
+                <h1>Calculator</h1>
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.firstNumber) }}
+    {{ form_row(form.secondNumber) }}
+    {{ form_row(form.operator) }}
+    {% if result is defined %}
+                    Result = {{ form_row(form.result) }}
+                {% endif %}
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
